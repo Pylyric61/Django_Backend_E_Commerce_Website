@@ -23,7 +23,9 @@
             </div>
         </nav>
         <div class="px-6 py-6">
-            <h1>The front page</h1>
+            {% if request.user.is_authenticated %}
+                <h1 class="mb-5 font-semibold text-xl text-black">Welcome {{user.username}}</h1>
+            {% endif %}
             {% block content %}
 
             {% endblock %}
